@@ -20,6 +20,7 @@ class Solution {
         1. 구매최소값을 갱신한다.
         2. 배열을 순회하면서, 배열의 원소값 - 최소값 의 최대값을 갱신한다.
         **/
+        int maxProfit = 0;
         int minBuy= Integer.MAX_VALUE;
         for(int i=0;i<prices.length;i++){
             
