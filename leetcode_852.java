@@ -3,7 +3,7 @@ package leetcode_gits;
 class Solution {
     public int peakIndexInMountainArray(int[] arr) {
         
-        /*�Ϲ� �迭 ��ȸ
+        /*배열순회방식
         
         int idx = 0;
         for(int i=1;i<arr.length;i++){
