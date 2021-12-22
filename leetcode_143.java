@@ -23,12 +23,13 @@ class Solution {
         curr = head;
         //큐에 넣은 값중 맨 위에꺼, 아래꺼 순으로 꺼내 링크를 연결시켜준다.
         while(!que.isEmpty()) {
-        	
+        	//큐에 쌓인 최신꺼를 꺼낸다.
         	if(que.isEmpty()) break;
         	ListNode top = que.pollLast();
         	top.next=null;
         	curr.next = top;
         	
+        	//큐에 쌓인지 오래된것을 꺼낸다.
         	if(que.isEmpty()) break;
             ListNode bot = que.pollFirst();
             bot.next = null; 
