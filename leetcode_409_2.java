@@ -1,10 +1,10 @@
 class Solution {
     public int longestPalindrome(String s) {
         
-        /**
-        문제 : 최대의 Palindrome 을 만들어라
-        풀이 : 스트링 s 에 대해 짝수인 char에 대해 모두 제거.
-               (짝수의 경우 최대 Palindrome을 만들기위해 무조건 사용)
+	    /**
+	        문제 : 최대의 Palindrome 을 만들어라
+	        풀이 : 스트링 s 에 대해 짝수인 char에 대해 모두 제거.
+	           (짝수의 경우 최대 Palindrome을 만들기위해 무조건 사용)
                set에는 홀수의 char 들만 남아있다.
                즉, abababdd 일경우 a,b 만 남을것이다.
                나머지 a 2개, b 2개, d 두개는 최대 Palindrome을 만들기위해 사용
