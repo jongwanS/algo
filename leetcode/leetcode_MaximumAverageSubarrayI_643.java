@@ -5,15 +5,18 @@ public class leetcode_MaximumAverageSubarrayI_643 {
         public double findMaxAverage(int[] nums, int k) {
 
             double max = Integer.MIN_VALUE;
-            for (int i=0;i<=nums.length-k;i++){
-                double sum = 0;
-                for(int j=i;j<k+i;j++){
-                    sum+=nums[j];
+            double sum = 0;
+            int start = 0;
+            for (int i=0;i<nums.length;i++){
+                sum+=nums[i];
+                if(i - start + 1==k){
+                    max = Math.max(max,sum/k);
+                    sum -= nums[start];
+                    start++;
                 }
-                max = Math.max(sum,max);
             }
 
-            return max/k;
+            return max;
         }
     }
 
