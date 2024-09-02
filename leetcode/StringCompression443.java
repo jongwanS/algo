@@ -1,3 +1,5 @@
+package leetcode;
+
 public class StringCompression443 {
     /**
      Given an array of characters chars, compress it using the following algorithm:
@@ -39,16 +41,22 @@ public class StringCompression443 {
     static class Solution {
         public int compress(char[] chars) {
             StringBuilder sb = new StringBuilder();
-            for (int i=0;i<chars.length-1;i++){
-                int alphaCnt = 0;
-                while (chars[i] == chars[i+1]){
-                    i++;
-                    alphaCnt++;
+
+            int index = 0;
+            while (index < chars.length){
+                int alphabetCount = 1;
+                while (index +1 < chars.length && chars[index] == chars[index+1]){
+                    index++;
+                    alphabetCount++;
                 }
-                sb.append(chars[i]);
-                if(alphaCnt>0){
-                    sb.append(alphaCnt);
-                }
+                sb.append(chars[index]);
+                index++;
+                if(alphabetCount > 1) sb.append(alphabetCount);
+
+            }
+            char[] array = sb.toString().toCharArray();
+            for(int i=0;i<array.length;i++){
+                chars[i] = array[i];
             }
             return sb.length();
         }
